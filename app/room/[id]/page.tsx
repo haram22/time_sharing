@@ -139,27 +139,14 @@ export default function RoomPage() {
   async function copyLink() {
   const url = `${window.location.origin}/room/${roomId}`;
 
-  // 모바일 공유 API
-  if (navigator.share) {
-    try {
-      await navigator.share({
-        title: "Shared Timer",
-        text: "같은 타이머를 함께 보세요",
-        url,
-      });
-      return;
-    } catch {}
-  }
-
-  // 클립보드
   try {
     await navigator.clipboard.writeText(url);
-    alert("링크 복사 완료!");
+    alert("링크가 클립보드에 복사되었습니다");
   } catch {
-    window.prompt("아래 링크를 복사해서 공유하세요:", url);
+    // 모바일 Safari 등에서 실패 시 최후 수단
+    window.prompt("아래 링크를 길게 눌러 복사하세요:", url);
   }
 }
-
 
 
   if (loading) {
@@ -182,12 +169,25 @@ export default function RoomPage() {
               같은 링크를 열면 어디서든 같은 타이머를 봅니다.
             </p>
           </div>
-          <button
+          {/* <button
             onClick={copyLink}
             className="rounded-xl border border-neutral-700 px-3 py-2 text-sm text-neutral-100 hover:bg-neutral-900"
           >
+            링크복사
+          </button> */}
+          <button
+            onClick={copyLink}
+            className="
+              rounded-xl border border-neutral-700
+              px-3 py-2 text-sm
+              text-neutral-100 hover:bg-neutral-900
+              ml-0 sm:ml-2
+              mr-2 sm:mr-0
+            "
+          >
             링크 복사
           </button>
+
         </div>
 
         <div className="mt-8 text-center">
