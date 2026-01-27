@@ -137,13 +137,30 @@ export default function RoomPage() {
   }
 
   async function copyLink() {
+  const url = `${window.location.origin}/room/${roomId}`;
+
+  // 모바일 공유 API
+  if (navigator.share) {
     try {
-      await navigator.clipboard.writeText(shareUrl);
-      alert("링크 복사 완료!");
-    } catch {
-      window.prompt("복사해서 공유하세요:", shareUrl);
-    }
+      await navigator.share({
+        title: "Shared Timer",
+        text: "같은 타이머를 함께 보세요",
+        url,
+      });
+      return;
+    } catch {}
   }
+
+  // 클립보드
+  try {
+    await navigator.clipboard.writeText(url);
+    alert("링크 복사 완료!");
+  } catch {
+    window.prompt("아래 링크를 복사해서 공유하세요:", url);
+  }
+}
+
+
 
   if (loading) {
     return (
