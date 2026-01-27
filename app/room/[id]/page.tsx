@@ -171,13 +171,19 @@ export default function RoomPage() {
             </p>
 
           </div>
-          {/* <button
+          <button
             onClick={copyLink}
-            className="rounded-xl border border-neutral-700 px-3 py-2 text-sm text-neutral-100 hover:bg-neutral-900"
+            className="
+              rounded-xl border border-neutral-700
+              px-3 py-2
+              text-[12px]
+              text-neutral-100 hover:bg-neutral-900
+            "
           >
             링크복사
-          </button> */}
-          <button
+          </button>
+
+          {/* <button
             onClick={copyLink}
             className="
               rounded-xl border border-neutral-700
@@ -190,7 +196,7 @@ export default function RoomPage() {
             "
           >
             링크 복사
-          </button>
+          </button> */}
         </div>
 
         <div className="mt-8 text-center">
