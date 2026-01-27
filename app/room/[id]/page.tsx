@@ -176,7 +176,7 @@ export default function RoomPage() {
             className="
               rounded-xl border border-neutral-700
               px-3 py-2
-              text-[12px]
+              text-[10px]
               text-neutral-100 hover:bg-neutral-900
             "
           >
