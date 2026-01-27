@@ -161,7 +161,7 @@ export default function RoomPage() {
   const isRunning = mode === "running";
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-6">
+    <main className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-lg rounded-2xl border border-neutral-800 bg-neutral-950 p-6 shadow">
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -176,7 +176,7 @@ export default function RoomPage() {
             className="
               rounded-xl border border-neutral-700
               px-3 py-2
-              text-[10px]
+              text-[12px]
               text-neutral-100 hover:bg-neutral-900
             "
           >
