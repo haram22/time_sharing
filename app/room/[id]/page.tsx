@@ -25,11 +25,12 @@ export default function RoomPage() {
   const roomId = String(params?.id ?? "");
   const roomRef = useMemo(() => doc(db, "rooms", roomId), [roomId]);
 
+  const DEFAULT_DURATION_SEC = 10 * 60; // 10분
   const [loading, setLoading] = useState(true);
   const [mode, setMode] = useState<RoomDoc["mode"]>("paused");
   const [durationSec, setDurationSec] = useState(25 * 60);
   const [endsAt, setEndsAt] = useState<number | null>(null);
-  const [pausedRemainingSec, setPausedRemainingSec] = useState(25 * 60);
+  const [pausedRemainingSec, setPausedRemainingSec] = useState(DEFAULT_DURATION_SEC);
 
   // local ticking (no DB writes)
   const [nowMs, setNowMs] = useState(Date.now());
@@ -51,9 +52,9 @@ export default function RoomPage() {
         if (!snap.exists()) {
           await setDoc(roomRef, {
             mode: "paused",
-            durationSec: 25 * 60,
+            durationSec: DEFAULT_DURATION_SEC,
             endsAt: null,
-            pausedRemainingSec: 25 * 60,
+            pausedRemainingSec: DEFAULT_DURATION_SEC,
             updatedAt: serverTimestamp(),
           });
           setLoading(false);
@@ -179,15 +180,16 @@ export default function RoomPage() {
             onClick={copyLink}
             className="
               rounded-xl border border-neutral-700
-              px-3 py-2 text-sm
+              px-4 py-3
+              text-sm font-medium
               text-neutral-100 hover:bg-neutral-900
-              ml-0 sm:ml-2
+
+              w-full sm:w-auto
               mr-2 sm:mr-0
             "
           >
             링크 복사
           </button>
-
         </div>
 
         <div className="mt-8 text-center">
