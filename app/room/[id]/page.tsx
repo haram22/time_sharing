@@ -166,9 +166,10 @@ export default function RoomPage() {
         <div className="flex items-start justify-between gap-3">
           <div>
             <h1 className="text-xl font-semibold">Room: {roomId}</h1>
-            <p className="mt-1 text-xs text-neutral-400">
+            <p className="mt-1 text-xs text-neutral-400 whitespace-nowrap">
               같은 링크를 열면 어디서든 같은 타이머를 봅니다.
             </p>
+
           </div>
           {/* <button
             onClick={copyLink}
@@ -177,20 +178,19 @@ export default function RoomPage() {
             링크복사
           </button> */}
           <button
-  onClick={copyLink}
-  className="
-    rounded-xl border border-neutral-700
-    px-4 py-3
-    text-sm font-medium
-    text-neutral-100 hover:bg-neutral-900
+            onClick={copyLink}
+            className="
+              rounded-xl border border-neutral-700
+              px-3 py-2 
+              text-sm font-medium
+              text-neutral-100 hover:bg-neutral-900
 
-    min-w-[110px] sm:min-w-0
-    mr-2 sm:mr-0
-  "
->
-  링크 복사
-</button>
-
+              min-w-[92px] sm:min-w-0
+              mr-2 sm:mr-0
+            "
+          >
+            링크 복사
+          </button>
         </div>
 
         <div className="mt-8 text-center">
