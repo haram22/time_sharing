@@ -200,7 +200,9 @@ export default function RoomPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <div className="text-6xl font-mono tracking-tight">{formatHHMMSS(remainingSec)}</div>
+          <div className="text-6xl font-mono tracking-tight text-white">
+  {formatHHMMSS(remainingSec)}
+</div>
           <div className="mt-2 text-sm text-neutral-400">상태: {isRunning ? "실행 중" : "일시정지"}</div>
         </div>
 
