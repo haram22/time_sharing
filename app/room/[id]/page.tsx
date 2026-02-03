@@ -226,7 +226,7 @@ export default function RoomPage() {
             onClick={reset}
             className="rounded-xl border border-neutral-700 px-4 py-3 text-neutral-100 hover:bg-neutral-900"
           >
-            리셋
+            초기화
           </button>
         </div>
 
