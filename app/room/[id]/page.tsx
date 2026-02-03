@@ -233,7 +233,7 @@ export default function RoomPage() {
         <div className="mt-6 rounded-xl border border-neutral-800 p-4">
           <label className="text-sm text-neutral-200">타이머 길이(분)</label>
           <div className="mt-2 flex gap-2 flex-wrap">
-            {[5, 10, 30, 50].map((m) => (
+            {[5, 10, 20, 30].map((m) => (
               <button
                 key={m}
                 onClick={() => setDurationMinutes(m)}
