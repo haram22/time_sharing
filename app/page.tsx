@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-md rounded-2xl border border-neutral-800 bg-neutral-950 p-6 shadow">
-        <h1 className="text-2xl font-semibold">Shared Timer</h1>
+        <h1 className="text-2xl font-semibold text-white">Shared Timer</h1>
         <p className="mt-2 text-sm text-neutral-300">
           링크를 공유하면 다른 기기에서도 같은 타이머를 볼 수 있어요.
         </p>
